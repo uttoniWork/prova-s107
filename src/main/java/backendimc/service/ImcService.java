@@ -4,6 +4,8 @@ import backendimc.entity.ImcDetails;
 import backendimc.repository.ImcRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ImcService {
 
@@ -15,5 +17,9 @@ public class ImcService {
 
     public ImcDetails saveImc(ImcDetails imcDetails) {
         return imcRepository.save(imcDetails);
+    }
+
+    public List<ImcDetails> listImcs() {
+        return imcRepository.findAll();
     }
 }
